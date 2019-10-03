@@ -7,13 +7,20 @@
     <link type="text/css" rel="stylesheet" href="{{asset('css/app.css')}}"/>
 <title>{{config('app.name')}}</title>
 </head>
+<style>
+.container{
+    margin-top: 20px;
+    background-color: ghostwhite;
+    /* opacity: 0.5; */
+}
+</style>
 <body>  
     <div class = "container">
     {{-- <h3>{{$detailStats->locationid}}</h3> --}}
         <br><br>
 
         <div class ="row">
-            <button class = "btn btn-primary" onclick="javascript:window.location.href='http:\/\/iot.com/dashboard'"> Back </button>
+            <button style="margin:10px;" class = "btn btn-primary" onclick="javascript:window.location.href='http:\/\/iot.com/dashboard'"> Back </button>
         </div> <br>    
 <table class = "table table-hover">
     <thead>
@@ -55,23 +62,6 @@
     function back(){
         document.location('http://iot.com/dashboard');
     }
-
-    function drawLine(ctx, startX, startY, endX, endY,color){
-        ctx.save();
-        ctx.strokeStyle = color;
-        ctx.beginPath();
-        ctx.moveTo(startX,startY);
-        ctx.lineTo(endX,endY);
-        ctx.stroke();
-        ctx.restore();
-    }
-    function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height,color){
-        ctx.save();
-        ctx.fillStyle=color;
-        ctx.fillRect(upperLeftCornerX,upperLeftCornerY,width,height);
-        ctx.restore();
-    }
-
 </script>
 </body>
 </html>

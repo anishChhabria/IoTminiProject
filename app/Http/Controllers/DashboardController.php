@@ -21,7 +21,7 @@ class DashboardController extends Controller
         // return(json_encode($data));
         $location = stats::distinct('locationid')->pluck('locationid');
         // return($admin);
-
+        
         return view('dashboard')->with('locations', $location)->with('count', count($location));
     }
     /**

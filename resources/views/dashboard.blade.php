@@ -59,14 +59,18 @@
     .flip-card-back {
     /* background-color: dodgerblue; */
     /* color: white; */
+    padding: 10%;
     transform: rotateY(180deg);
     }
     #cont1{
         display: inline-flex;
     }
-
+    #graphDiv1{
+        margin-left: 20%;
+    }
     </style>
 
+    <script src = "{{asset('js/bargraph.js')}}"></script>
 
 </head>
 <body>    
@@ -81,40 +85,172 @@
             @endif
             <br>
             <div class="row">
-                    <button class = "btn btn-primary" onclick="javascript:window.location.href='http:\/\/iot.com'"> Back </button>
+                    <button style="margin:10px" class = "btn btn-primary" onclick="javascript:window.location.href='http:\/\/iot.com'"> Back </button>
             </div>
+                      
             
-        {{-- <div class="container"> --}}
-
-
-        <div id="cont1">
-            @foreach ($locations as $location)
+    <div id="cont1">
+                <div class = "row">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                    <h4 class = "card-title" id = "chembur">Chembur</h4>
+                                
+                            </div>
+                            <div class="flip-card-back">
+                                    <p>Count of dustbin in the locality : 2</p>
+                                    <p class="card-text">Click the Link below to view the statsistics in detail.</p>
+                                    <a href="/stats/1" class="card-link">Detailed Statistics</a>
+                            </div>
+                        </div>
+                    </div>        
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                    <h4 class = "card-title" id = "chembur">Ghatkopar</h4>
+                                
+                                
+                            </div>
+                            <div class="flip-card-back">
+                                    <p>Count of dustbin in the locality : 1</p>
+                                    <p class="card-text">Click the Link below to view the statsistics in detail.</p>
+                                    <a href="/stats/2" class="card-link">Detailed Statistics</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card">
+                            <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                    <h4 class = "card-title" id = "ghatkhopar">Sion</h4>                            
+                            </div>
+                            <div class="flip-card-back">
+                                    <p>Count of dustbin in the locality : 1</p>
+                                    <p class="card-text">Click the Link below to view the statsistics in detail.</p>
+                                    <a href="/stats/3" class="card-link">Detailed Statistics</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                {{-- <div class="flip-card">
+                        <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                                <h4 class = "card-title" id = "ghatkhopar">Kurla</h4>/                               
+                        </div>
+                        <div class="flip-card-back">
+                                <p>Count of dustbin in the locality : 1</p>
+                                <p class="card-text">Click the Link below to view the statsistics in detail.</p>
+                                <a href="/stats/4" class="card-link">Detailed Statistics</a>
+                        </div>
+                    </div>
+                </div> --}}
+            
+    </div>
+    <div id="cont1">
+            <div class = "row">
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            @if($location == 1)
-                                <h4 class = "card-title" id = "chembur">Chembur</h4>
-                            @elseif($location == 2)
-                                <h4 class = "card-title" id = "ghatkhopar">Ghatkopar</h4>
-                            @endif
+                                <h4 class = "card-title" id = "chembur">Kurla</h4>
                             
                         </div>
                         <div class="flip-card-back">
-                                <p>Count of dustbin in the locality : {{$count}}</p>
+                                <p>Count of dustbin in the locality : 1</p>
                                 <p class="card-text">Click the Link below to view the statsistics in detail.</p>
-                                <a href="/stats/{{$location}}" class="card-link">Detailed Statistics</a>
+                                <a href="/stats/4" class="card-link">Detailed Statistics</a>
                         </div>
                     </div>
                 </div>        
-            @endforeach
-        </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                                <h4 class = "card-title" id = "chembur">Bandra</h4>
+                            
+                            
+                        </div>
+                        <div class="flip-card-back">
+                                <p>Count of dustbin in the locality : 3</p>
+                                <p class="card-text">Click the Link below to view the statsistics in detail.</p>
+                                <a href="/stats/5" class="card-link">Detailed Statistics</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                        <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                                <h4 class = "card-title" id = "ghatkhopar">Dadar</h4>                            
+                        </div>
+                        <div class="flip-card-back">
+                                <p>Count of dustbin in the locality : 2</p>
+                                <p class="card-text">Click the Link below to view the statsistics in detail.</p>
+                                <a href="/stats/5" class="card-link">Detailed Statistics</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            {{-- <div class="flip-card">
+                    <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                            <h4 class = "card-title" id = "ghatkhopar">Kurla</h4>/                               
+                    </div>
+                    <div class="flip-card-back">
+                            <p>Count of dustbin in the locality : 1</p>
+                            <p class="card-text">Click the Link below to view the statsistics in detail.</p>
+                            <a href="/stats/4" class="card-link">Detailed Statistics</a>
+                    </div>
+                </div>
+            </div> --}}
+        
     </div>
+
+    {{-- <canvas id="canvasId"></canvas> --}}
+    <div class="row" style="width:100%;height:100%;"><div id="graphDiv1"></div></div>
+</div>
     <script>
         function reload(){
             document.location.reload();
         }
     </script>
+    <script>(function () {
+	
+            function createCanvas(divName) {
+                
+                var div = document.getElementById(divName);
+                var canvas = document.createElement('canvas');
+                div.appendChild(canvas);
+                if (typeof G_vmlCanvasManager != 'undefined') {
+                    canvas = G_vmlCanvasManager.initElement(canvas);
+                }	
+                var ctx = canvas.getContext("2d");
+                return ctx;
+            }
+            
+            var ctx = createCanvas("graphDiv1");
+            
+            var graph = new BarGraph(ctx);
+            // graph.maxValue = 30;
+            graph.margin = 2;
+            // graph2.width = 450;
+            // graph2.height = 150;
+            graph.colors = ["#49a0d8", "#d353a0", "#ffc527", "#df4c27", "#ffc527", "#49a0d8"];
+            graph.xAxisLabelArr = ["Chembur", "Ghatkopar", "Kurla", "Sion", "Bandra", "Dadar"];
+            setInterval(function () {
+                graph.update([Math.random() * 30, Math.random() * 30, Math.random() * 30, Math.random() * 30, Math.random() * 30, Math.random() * 30]);
+            }, 1500);
+            
+            var ctx2 = createCanvas("graphDiv2");
+            
+            var graph2 = new BarGraph(ctx2);
+            graph2.margin = 2;
+            graph2.width = 450;
+            graph2.height = 150;
+            graph2.xAxisLabelArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"];
+            setInterval(function () {
+                graph2.update([Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20]);
+            }, 1500);
     
+        }());</script>
     {{-- {{$statistics}} --}}
 </body>
 </html>
