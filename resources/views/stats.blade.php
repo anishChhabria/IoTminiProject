@@ -22,34 +22,33 @@
         <div class ="row">
             <button style="margin:10px;" class = "btn btn-primary" onclick="javascript:window.location.href='http:\/\/iot.com/dashboard'"> Back </button>
         </div> <br>    
-<table class = "table table-hover">
-    <thead>
-        <tr>
-            <th>Dustbin ID</th>
-            <th>Weight</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Year</th>
-            <th>Timestamp</th>
-            
-        </tr>
-    </thead>    
-        @foreach ($detailStats as $stats )
-            <tr>
-            <td>{{$stats->uid}}</td>
-            <td>{{$stats->weight}}</td>
-            <td>{{$stats->time}}</td>
-            <td>{{$stats->date}}</td>
-            <td>{{$stats->year}}</td>
-            <td>{{$stats->timestamp}}</td>
-            </tr>
-        @endforeach
-        
-    </table>
-    <canvas id="myCanvas"></canvas>
-    
+            <table class = "table table-striped table-hover ">
+                <thead>
+                    <tr>
+                        <th>Dustbin ID</th>
+                        <th>Weight</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Year</th>
+                        <th>Timestamp</th>
+                        
+                    </tr>
+                </thead>    
+                    @foreach ($detailStats as $stats )
+                        <tr>
+                        <td>{{$stats->uid}}</td>
+                        <td>{{$stats->weight}}</td>
+                        <td>{{$stats->time}}</td>
+                        <td>{{$stats->date}}</td>
+                        <td>{{$stats->year}}</td>
+                        <td>{{$stats->timestamp}}</td>
+                        </tr>
+                    @endforeach
+            </table>
+                <canvas id="myCanvas"></canvas>
+                
 
-    </div>
+                </div>
 
 
 <script type="text/javascript" src="script.js">

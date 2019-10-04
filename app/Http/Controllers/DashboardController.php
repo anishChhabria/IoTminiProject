@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\stats;
 use Redirect;
+use Illuminate\Support\Facades\DB;
+
 class DashboardController extends Controller
 {
     /**
@@ -19,10 +21,17 @@ class DashboardController extends Controller
     public function dashboard()
     {
         // return(json_encode($data));
-        $location = stats::distinct('locationid')->pluck('locationid');
+        $locations = stats::distinct('locationid')->pluck('locationid');
         // return($admin);
-        
-        return view('dashboard')->with('locations', $location)->with('count', count($location));
+        // $count = DB::select('SELECT locationid, ');
+        foreach($locations as $location){
+            // print_r($location);
+        $place[$location] = DB::select('SELECT COUNT(locationid) as count from stats where locationid = ?',[$location]);
+        // print_r($place);    
+        }
+        // return($place);
+        // return('gg');
+        return view('dashboard')->with('locations', $locations)->with('count', $place);
     }
     /**
      * Show the form for creating a new resource.

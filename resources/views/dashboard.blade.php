@@ -11,6 +11,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <style>
+
+    .container{
+        background-color: ghostwhite;
+    }
     .flip-card {
     background-color: transparent;
     width: 300px;
@@ -20,6 +24,7 @@
     /* background-color: powderblue;  */
     padding: 5px;
     margin: 10px;
+    background-color: white;
 
     }
 
@@ -47,7 +52,7 @@
     backface-visibility: hidden;
     }
 
-    /* Style the front side (fallback if image is missing) */
+    /* Stylhe front side (fallback if image is missing) */
     .flip-card-front {
     /* background-color: #bbb; */
     color: black;
@@ -59,14 +64,16 @@
     .flip-card-back {
     /* background-color: dodgerblue; */
     /* color: white; */
-    padding: 10%;
+    padding: 7%;
     transform: rotateY(180deg);
     }
     #cont1{
         display: inline-flex;
+        text-align: center;
+        
     }
     #graphDiv1{
-        margin-left: 20%;
+        margin-left: 18%;
     }
     </style>
 
@@ -98,7 +105,7 @@
                                 
                             </div>
                             <div class="flip-card-back">
-                                    <p>Count of dustbin in the locality : 2</p>
+                                    <p>Count of dustbin in the locality : <div id ="value">{{$count['1'][0]->count}}</div> </p>
                                     <p class="card-text">Click the Link below to view the statsistics in detail.</p>
                                     <a href="/stats/1" class="card-link">Detailed Statistics</a>
                             </div>
@@ -112,7 +119,7 @@
                                 
                             </div>
                             <div class="flip-card-back">
-                                    <p>Count of dustbin in the locality : 1</p>
+                                    <p>Count of dustbin in the locality : <div id = "2">{{$count['2'][0]->count}}</div></p>
                                     <p class="card-text">Click the Link below to view the statsistics in detail.</p>
                                     <a href="/stats/2" class="card-link">Detailed Statistics</a>
                             </div>
@@ -124,7 +131,7 @@
                                     <h4 class = "card-title" id = "ghatkhopar">Sion</h4>                            
                             </div>
                             <div class="flip-card-back">
-                                    <p>Count of dustbin in the locality : 1</p>
+                                    <p>Count of dustbin in the locality : <div id = "3">{{$count['3'][0]->count}}</div></p>
                                     <p class="card-text">Click the Link below to view the statsistics in detail.</p>
                                     <a href="/stats/3" class="card-link">Detailed Statistics</a>
                             </div>
@@ -138,7 +145,7 @@
                                 <h4 class = "card-title" id = "ghatkhopar">Kurla</h4>/                               
                         </div>
                         <div class="flip-card-back">
-                                <p>Count of dustbin in the locality : 1</p>
+                                <p>Count of dustbin in the locality : <div id = "">1</p>
                                 <p class="card-text">Click the Link below to view the statsistics in detail.</p>
                                 <a href="/stats/4" class="card-link">Detailed Statistics</a>
                         </div>
@@ -155,7 +162,7 @@
                             
                         </div>
                         <div class="flip-card-back">
-                                <p>Count of dustbin in the locality : 1</p>
+                                <p>Count of dustbin in the locality : <div id = "4">{{$count['4'][0]->count}}</div></p>
                                 <p class="card-text">Click the Link below to view the statsistics in detail.</p>
                                 <a href="/stats/4" class="card-link">Detailed Statistics</a>
                         </div>
@@ -169,7 +176,7 @@
                             
                         </div>
                         <div class="flip-card-back">
-                                <p>Count of dustbin in the locality : 3</p>
+                                <p>Count of dustbin in the locality : <div id = "5">{{$count['5'][0]->count}}</div></p>
                                 <p class="card-text">Click the Link below to view the statsistics in detail.</p>
                                 <a href="/stats/5" class="card-link">Detailed Statistics</a>
                         </div>
@@ -181,7 +188,7 @@
                                 <h4 class = "card-title" id = "ghatkhopar">Dadar</h4>                            
                         </div>
                         <div class="flip-card-back">
-                                <p>Count of dustbin in the locality : 2</p>
+                                <p>Count of dustbin in the locality : <div id = "6">{{$count['6'][0]->count}}</div></p>
                                 <p class="card-text">Click the Link below to view the statsistics in detail.</p>
                                 <a href="/stats/5" class="card-link">Detailed Statistics</a>
                         </div>
@@ -227,17 +234,25 @@
             }
             
             var ctx = createCanvas("graphDiv1");
-            
             var graph = new BarGraph(ctx);
             // graph.maxValue = 30;
             graph.margin = 2;
             // graph2.width = 450;
             // graph2.height = 150;
+            var x1=document.getElementById("value").innerHTML;
+            var x2=document.getElementById("2").innerHTML;
+            var x3=document.getElementById("3").innerHTML;
+            var x4=document.getElementById("4").innerHTML;
+            var x5=document.getElementById("5").innerHTML;
+            var x6=document.getElementById("6").innerHTML;
+            // console.log(x);
+            
             graph.colors = ["#49a0d8", "#d353a0", "#ffc527", "#df4c27", "#ffc527", "#49a0d8"];
             graph.xAxisLabelArr = ["Chembur", "Ghatkopar", "Kurla", "Sion", "Bandra", "Dadar"];
-            setInterval(function () {
-                graph.update([Math.random() * 30, Math.random() * 30, Math.random() * 30, Math.random() * 30, Math.random() * 30, Math.random() * 30]);
-            }, 1500);
+            graph.update([parseInt(x1),parseInt(x2),parseInt(x3),parseInt(x4),parseInt(x5),parseInt(x6)])
+            // setInterval(function () {
+            //     graph.update([Math.random() * 30, Math.random() * 30, Math.random() * 30, Math.random() * 30, Math.random() * 30, Math.random() * 30]);
+            // }, 1500);
             
             var ctx2 = createCanvas("graphDiv2");
             
@@ -246,9 +261,9 @@
             graph2.width = 450;
             graph2.height = 150;
             graph2.xAxisLabelArr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"];
-            setInterval(function () {
-                graph2.update([Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20]);
-            }, 1500);
+            // setInterval(function () {
+            //     graph2.update([Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20, Math.random() * 20]);
+            // }, 1500);
     
         }());</script>
     {{-- {{$statistics}} --}}
