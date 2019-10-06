@@ -60,15 +60,15 @@
 
 					<div class="col-md-6">
 						<div class="section-header">
-							<h2>Welcome to EARS</h2>
+							<h2>Welcome to G.M.A.S</h2>
 							<p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus aliquam porro ipsum doloribus voluptatum laudantium molestiae ex suscipit, praesentium minus modi necessitatibus vero unde optio a quod ut excepturi numquam?</p>
 						</div>
 
 						<!-- feature -->
 						<div class="feature">
-							<i class="feature-icon fa fa-flask"></i>
+							<i class="feature-icon fa fa-desktop"></i>
 							<div class="feature-content">
-								<h4>Online Assessment</h4>
+								<h4>Smart Monitoring</h4>
 								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore iste assumenda molestias aut provident, sequi explicabo officia maiores repudiandae quod error? Cum nihil minima expedita dolorum, atque nulla eaque debitis!</p>
 							</div>
 						</div>

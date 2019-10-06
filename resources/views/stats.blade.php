@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link type="text/css" rel="stylesheet" href="{{asset('css/app.css')}}"/>
+    {{-- <link type="text/css" rel="stylesheet" href="{{asset('css/app.css')}}"/> --}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <title>{{config('app.name')}}</title>
 </head>
 <style>
@@ -26,11 +27,12 @@
                 <thead>
                     <tr>
                         <th>Dustbin ID</th>
-                        <th>Weight</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Year</th>
+                        <th>Weight (gms)</th>
+                        {{-- <th>Time</th> --}}
+                        {{-- <th>Date</th> --}}
+                        {{-- <th>Year</th> --}}
                         <th>Timestamp</th>
+                        <th>Status</th>
                         
                     </tr>
                 </thead>    
@@ -38,10 +40,17 @@
                         <tr>
                         <td>{{$stats->uid}}</td>
                         <td>{{$stats->weight}}</td>
-                        <td>{{$stats->time}}</td>
-                        <td>{{$stats->date}}</td>
-                        <td>{{$stats->year}}</td>
+                        {{-- <td>{{$stats->time}}</td> --}}
+                        {{-- <td>{{$stats->date}}</td> --}}
+                        {{-- <td>{{$stats->year}}</td> --}}
                         <td>{{$stats->timestamp}}</td>
+                        <td>
+                            @if($stats->weight > 500)
+                                To be Cleaned
+                            @else
+                                Ok
+                            @endif
+                        </td>
                         </tr>
                     @endforeach
             </table>
