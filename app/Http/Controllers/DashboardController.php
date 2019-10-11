@@ -31,7 +31,7 @@ class DashboardController extends Controller
         }
         // return($place);
         // return('gg');
-        return view('dashboard')->with('locations', $locations)->with('count', $place);
+        return view('home')->with('locations', $locations)->with('count', $place);
     }
     /**
      * Show the form for creating a new resource.
@@ -69,7 +69,7 @@ class DashboardController extends Controller
             $msg = "Sorry No data available";
             // return view('stats')->with('detailStats', $stats);
 
-            return redirect::to('/dashboard')->withMessage( $msg);
+            return redirect::to('/home')->withMessage( $msg);
         }
         
     }

@@ -37,21 +37,41 @@
                     </tr>
                 </thead>    
                     @foreach ($detailStats as $stats )
-                        <tr>
-                        <td>{{$stats->uid}}</td>
-                        <td>{{$stats->weight}}</td>
-                        {{-- <td>{{$stats->time}}</td> --}}
-                        {{-- <td>{{$stats->date}}</td> --}}
-                        {{-- <td>{{$stats->year}}</td> --}}
-                        <td>{{$stats->timestamp}}</td>
-                        <td>
-                            @if($stats->weight > 500)
-                                To be Cleaned
-                            @else
-                                Ok
-                            @endif
-                        </td>
+                        @if($stats->weight > 500)    
+                        <tr style="background-color:red; opacity:0.5; color:white">
+                            <td>{{$stats->uid}}</td>
+                            <td>{{$stats->weight}}</td>
+                            {{-- <td>{{$stats->time}}</td> --}}
+                            {{-- <td>{{$stats->date}}</td> --}}
+                            {{-- <td>{{$stats->year}}</td> --}}
+                            <td>{{$stats->timestamp}}</td>
+                            {{-- <td></td> --}}
+                            <td>
+                                @if($stats->weight > 500)
+                                    To be Cleaned
+                                @else
+                                    Ok
+                                @endif
+                            </td>
                         </tr>
+                        @else 
+                        <tr style="background-color:green; opacity:0.5; color:white">
+                            <td>{{$stats->uid}}</td>
+                            <td>{{$stats->weight}}</td>
+                            {{-- <td>{{$stats->time}}</td> --}}
+                            {{-- <td>{{$stats->date}}</td> --}}
+                            {{-- <td>{{$stats->year}}</td> --}}
+                            <td>{{$stats->timestamp}}</td>
+                            {{-- <td></td> --}}
+                            <td>
+                                @if($stats->weight > 500)
+                                    To be Cleaned
+                                @else
+                                    Ok
+                                @endif
+                            </td>
+                        </tr>
+                        @endif
                     @endforeach
             </table>
                 <canvas id="myCanvas"></canvas>

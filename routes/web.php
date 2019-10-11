@@ -14,3 +14,7 @@
 route::get('/','DashboardController@index');
 route::get('/dashboard','DashboardController@dashboard');
 route::get('/stats/{id}','DashboardController@show')->name('id');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
