@@ -1,11 +1,13 @@
 .flip-card {
 background-color: transparent;
 width: 350px;
-height: 200px;
+height: 220px;
 border: 1px solid black;
 perspective: 1000px; /* Remove this if you don't want the 3D effect */
 padding: 5px;
 margin: 15px;
+background-color: rgba(0, 0, 0, 0.3);
+/* opacity: 0.5; */
 
 
 }
@@ -19,6 +21,7 @@ text-align: center;
 border: 0.5px solid black;
 transition: transform 0.8s;
 transform-style: preserve-3d;
+/* opacity: 1 !important; */
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */

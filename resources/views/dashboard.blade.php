@@ -212,7 +212,7 @@
         
     </div>
 
-    {{-- <canvas id="canvasId"></canvas> --}}
+    <canvas id="canvasId"></canvas>
     <div class="row" style="width:100%;height:100%;"><div id="graphDiv1"></div></div>
 </div>
     <script>

@@ -64,7 +64,7 @@ class DashboardController extends Controller
     {
         $stats = stats::get()->where('locationid','=',$id);
         if(count($stats)){
-            return view('stats')->with('detailStats', $stats);
+            return view('location')->with('detailStats', $stats);
         }else{
             $msg = "Sorry No data available";
             // return view('stats')->with('detailStats', $stats);
